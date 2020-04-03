@@ -1,0 +1,42 @@
+<div class="table-responsive">
+  <!--Table-->
+  <table class="table table-striped">
+
+    <!--Table head-->
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Nama Lengkap</th>
+        <th>NIK</th>
+        <th>Nomor HP</th>
+        <th>FOTO KK</th>
+        <th>FOTO Akta</th>
+        <th>Actions</th>
+        <th>Actions</th>
+        <th>Proses</th>
+      </tr>
+    </thead>
+    <!--Table head-->
+
+    <!--Table body-->
+    <tbody>
+
+      <!-- menggunakan looping untuk menampilkan seluruh data -->
+    	{% for post in post_model %}
+      <tr>
+        <th scope="row">{{forloop.counter}}</th>
+        <td>{{post.namleng}}</td>
+        <td>{{post.nik}}</td>
+        <td>{{post.no_hp}}</td>
+        <td><img src="{{post.kk.url}}" style="height: 150px; width: 200px;" /></td>
+        <td><img src="{{post.akta.url}}" style="height: 150px; width: 200px;"/></td>
+        <td><a class="btn btn-danger" href="{% url 'admin-delete' post.id %}">Hapus</a></td>
+        <td><a class="btn btn-warning" href="{% url 'admin-update' post.id %}">Ubah</a></td>
+        <td><a class="btn btn-success" href="{% url 'status_proses' post.id %}">{{post.status_proses}}</a></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+    <!--Table body-->
+  </table>
+  <!--Table-->
+</div>

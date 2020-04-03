@@ -1,0 +1,61 @@
+{% load static %}
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="{% static 'css/navbar.css' %}">
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Abel" />
+<!------ Include the above in your HEAD tag ---------->
+
+<nav class="navbar navbar-expand-sm navbar-dark" id="mainNav" style="font-family: Abel;">
+        <a class="navbar-brand " href="/"><img src="{% static 'img/logo.png' %}" style="width: 250px; height: 40px;"></a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                aria-label="Toggle navigation">
+            Menu
+            <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+
+                {% if request.user.is_authenticated %}
+                <li class="nav-item">
+                    <a href="/accounts/profile/">
+                        <img src="{{request.user.user_profile.image.url_60x60}}" style="height:40px;"
+                             alt="{{request.user.fullname}}" class="avatar rounded-circle">
+                    </a>
+                        <span class="header-username" style="color: white;">{{request.user.get_full_name}}</span>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link " href="/accounts/logout/">Keluar</a>
+                </li>
+                {% else %}
+                
+                <!-- Menu Beranda -->
+                <li class="nav-item">
+                    <a class="nav-link " href="/">Beranda</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link " href="{% url 'produk_desa' %}">Produk Desa</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link " href="/accounts/login/">Masuk</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link " href="/accounts/signup/">Daftar</a>
+                </li>
+                {% endif %}
+
+                {% if request.user.is_superuser %}
+                <li class="nav-item">
+                    <a class="nav-link " href="/accounts/admin/">Admin Pages</a>
+                </li>
+                {% endif %}
+
+            </ul>
+        </div>
+</nav>

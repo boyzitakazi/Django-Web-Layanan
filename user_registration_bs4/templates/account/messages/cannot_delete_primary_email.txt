@@ -1,0 +1,2 @@
+{% load i18n %}
+{% blocktrans %}Anda tidak dapat menghapus alamat email utama Anda ({{email}}).{% endblocktrans %}

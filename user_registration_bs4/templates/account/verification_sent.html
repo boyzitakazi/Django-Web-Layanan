@@ -1,0 +1,23 @@
+{% extends "account/base.html" %}
+
+{% load i18n %}
+
+{% block head_title %}{% trans "Verifikasi alamat email Anda" %}{% endblock %}
+
+{% block content %}
+<div class="container">    <div class="mt-5"></div>
+
+    <div class="row">
+        <div class="col col-5  mx-auto">
+            <div class="card">
+                <div class="card-body">
+    <h1 class="h4">{% trans "Verifikasi alamat email Anda" %}</h1>
+    <hr>
+
+    <p>{% blocktrans %}Kami telah mengirim email kepada Anda untuk verifikasi. Ikuti tautan yang disediakan untuk menyelesaikan proses pendaftaran. Silakan hubungi kami jika Anda tidak menerimanya dalam beberapa menit.{% endblocktrans %}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+{% load bootstrap4 %}
+
+{% block head_title %}{% trans "User Profile" %}{% endblock %}
+
+{% block content %}
+<div class="container mt-3">
+    <div class="row">
+        <div class="col col-3 ">
+            {% include 'user_profile/sidebar.html' %}
+        </div>
+
+        <div class="col col-9 ">
+
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="h6">User Profile Settings</h2>
+                    <hr>
+                    <form class="form" id="user_update_form" enctype="multipart/form-data" method="post" action=".">
+                        {% csrf_token %}
+                        <h5>Apakah anda yakin ingin menghapus : {{ object.first_name }}</h5>
+
+                        <input type="submit" name="Confirm" class="btn btn-warning">
+                        <a href="{% url 'admin-dhasboard' %}" class="btn btn-success">Cancel</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,38 @@
+<div class="table-responsive">
+  <!--Table-->
+  <table class="table table-striped">
+
+    <!--Table head-->
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Nama Lengkap</th>
+        <th>NIK</th>
+        <th>Nomor HP</th>
+        <th>FOTO KK</th>
+        <th>FOTO Akta</th>
+        <th>Status</th>
+        <th>Keterangan</th>
+      </tr>
+    </thead>
+    <!--Table head-->
+
+    <!--Table body-->
+    <tbody>
+    	{% for post in post_model %}
+      <tr>
+        <th scope="row">{{forloop.counter}}</th>
+        <td>{{post.namleng}}</td>
+        <td>{{post.nik}}</td>
+        <td>{{post.no_hp}}</td>
+        <td><img src="{{post.kk.url}}" style="height: 150px; width: 200px;" /></td>
+        <td><img src="{{post.akta.url}}" style="height: 150px; width: 200px;"/></td>
+        <td><a class="btn btn-danger" style="color: white;">{{post.status_proses}}</a></td>
+        <td>{{post.pesan}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+    <!--Table body-->
+  </table>
+  <!--Table-->
+</div>

@@ -1,0 +1,37 @@
+{% extends "account/base.html" %}
+
+{% load i18n %}
+{% load bootstrap4 %}
+{% block head_title %}{% trans "Daftar" %}{% endblock %}
+
+{% block content %}
+
+<div class="container">
+            <div class="mt-5 "></div>
+
+    <div class="row">
+
+        <div class="col col-5  mx-auto">
+
+            <div class="card">
+                <div class="card-body">
+
+                    <h1 class="h4">{% trans "Daftar" %}</h1>
+                    <hr>
+
+                    <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
+                        {% csrf_token %}
+                        {% bootstrap_form form %}
+                        {% if redirect_field_value %}
+                        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+                        {% endif %}
+                        <button type="submit" class="btn btn-primary btn-block">{% trans "Daftar" %} &raquo;</button>
+                    </form>
+                    <p>{% blocktrans %}Sudah memiliki akun? silahkan <a href="{{ login_url }}">Masuk</a>.
+                        {% endblocktrans %}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

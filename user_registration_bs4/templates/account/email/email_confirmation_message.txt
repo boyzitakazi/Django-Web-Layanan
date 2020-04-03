@@ -1,0 +1,8 @@
+{% load account %}{% user_display user as user_display %}{% load i18n %}{% autoescape off %}{% blocktrans with site_name=current_site.name site_domain=current_site.domain %}Hai {{ site_name }}!
+
+Anda menerima email ini karena pengguna {{ user_display }} telah memberikan alamat email Anda kepada Anda untuk menghubungkan akun mereka.
+
+Untuk mengkonfirmasi bahwa ini benar anda, buka {{ activate_url }}
+{% endblocktrans %}{% endautoescape %}
+{% blocktrans with site_name=current_site.name site_domain=current_site.domain %}Terimakasih {{ site_name }}!
+{{ site_domain }}{% endblocktrans %}

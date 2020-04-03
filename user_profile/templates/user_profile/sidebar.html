@@ -1,0 +1,21 @@
+<div class="card">
+    <div class="card-body">
+        <h2 class="h6">Menu Navigasi</h2>
+        <hr>
+
+        <!-- Logika untuk menu pada admin -->
+        {% if request.user.is_superuser %}
+        <ul class="list-group">
+            <li class="list-group-item"><a href="{% url 'admin-dhasboard' %}">Data Pemohon</a></li>
+            <li class="list-group-item"><a href="{% url 'register_ktp' %}">Registrasi KTP</a></li>
+        </ul>
+
+        <!-- Logika untuk menu pada user -->
+        {% elif request.user.is_authenticated %}
+        <ul class="list-group">
+            <li class="list-group-item"><a href="{% url 'register_ktp' %}">Registrasi KTP</a></li>
+            <li class="list-group-item"><a href="{% url 'post_user' user.id %}">Status Akun</a></li>
+        </ul>
+        {% endif %}
+    </div>
+</div>

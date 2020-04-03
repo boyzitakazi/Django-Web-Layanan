@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+{% load bootstrap4 %}
+
+{% block head_title %}{% trans "User Profile" %}{% endblock %}
+
+{% block content %}
+<div class="container mt-3">
+    <div class="row">
+        <div class="col col-3 ">
+            {% include 'user_profile/sidebar.html' %}
+        </div>
+
+        <div class="col col-9 ">
+
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="h6">Panduan</h2>
+                    <hr>
+					<ul>
+						<h3>Cara Melakukan Registrasi KTP menggunakan aplikasi web</h3>
+                        <ul>
+                            <li>1. Registrasi akun terlebih dahulu</li>
+                        </ul>
+					</ul>                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

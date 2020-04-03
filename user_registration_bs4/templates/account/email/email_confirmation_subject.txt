@@ -1,0 +1,4 @@
+{% load i18n %}
+{% autoescape off %}
+{% blocktrans %}Harap Konfirmasikan Alamat Email Anda{% endblocktrans %}
+{% endautoescape %}

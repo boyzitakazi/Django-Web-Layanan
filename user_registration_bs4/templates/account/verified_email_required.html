@@ -1,0 +1,31 @@
+{% extends "account/base.html" %}
+
+{% load i18n %}
+
+{% block head_title %}{% trans "Verifikasi alamat email Anda" %}{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <div class="mt-5"></div>
+    <div class="row">
+        <div class="col col-5  mx-auto">
+            <div class="card">
+                <div class="card-body">
+                    <h1 class="h4">{% trans "Verifikasi alamat email Anda" %}</h1>
+                    <hr>
+
+                    {% url 'account_email' as email_url %}
+
+                    <p>{% blocktrans %}Bagian situs ini mengharuskan kami untuk memverifikasi bahwa Anda adalah seorang pengguna. Untuk tujuan ini, kami mengharuskan Anda memverifikasi kepemilikan alamat email Anda. {% endblocktrans %}</p>
+
+                    <p>{% blocktrans %}Kami telah mengirim email kepada Anda untuk verifikasi. Silakan klik tautan di dalam email ini. Silakan hubungi kami jika Anda tidak menerimanya dalam beberapa menit.{% endblocktrans %}</p>
+
+                    <p>{% blocktrans %}<strong>Note:</strong> kamu masih bisa <a href="{{ email_url }}">ubah alamat email Anda</a>.{% endblocktrans %}</p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,2 @@
+{% load i18n %}
+{% blocktrans %}Anda sudah mengkonfirmasi {{email}}.{% endblocktrans %}
