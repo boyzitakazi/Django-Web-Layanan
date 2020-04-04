@@ -1,2 +1,4 @@
 # Django-Web-Layanan
-Contoh Layanan masyarakat pembuatan KTP berbasis Web menggunakan Django
+Example of community services making Web-based <b>ID cards</b> using Django
+<br>
+<img src="README/primary.png">
