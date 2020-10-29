@@ -7,7 +7,6 @@ django-bootstrap4==0.0.8
 django-thumbs-v2==0.4.1
 idna==2.8
 oauthlib==3.1.0
-Pillow==6.1.0
 placeholder-pics==1.0.3
 PyJWT==1.7.1
 python-openid==2.2.5
